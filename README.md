@@ -1,7 +1,4 @@
-You’re right — in Markdown, links need to be **clickable with proper text**.
-Here’s the corrected `README.md` where the **Live Portfolio link is fully clickable**:
-
-````markdown
+````
 # 🚀 Chiranjeevi Joshi — Portfolio
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
