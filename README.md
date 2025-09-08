@@ -10,13 +10,6 @@ Here’s the corrected `README.md` where the **Live Portfolio link is fully clic
 ![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
----
-
-This is my personal **developer portfolio** built using **Next.js, Tailwind CSS, and Framer Motion**.
-
-🔗 **Live Portfolio:** [https://portfolio-delta-rust-22aph7bxi0.vercel.app](https://portfolio-delta-rust-22aph7bxi0.vercel.app)
-
----
 
 ## 🔥 Features
 
@@ -43,6 +36,14 @@ npm install
 # Run development server
 npm run dev
 ````
+
+---
+
+This is my personal **developer portfolio** built using **Next.js, Tailwind CSS, and Framer Motion**.
+
+🔗 **Live Portfolio:** [https://portfolio-delta-rust-22aph7bxi0.vercel.app](https://portfolio-delta-rust-22aph7bxi0.vercel.app)
+
+---
 
 App will be available at: **[http://localhost:3000](http://localhost:3000)**
 
