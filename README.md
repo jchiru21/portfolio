@@ -1,4 +1,5 @@
-Here’s your updated **`README.md`** with the **live portfolio link added** ✅
+You’re right — in Markdown, links need to be **clickable with proper text**.
+Here’s the corrected `README.md` where the **Live Portfolio link is fully clickable**:
 
 ````markdown
 # 🚀 Chiranjeevi Joshi — Portfolio
@@ -13,7 +14,7 @@ Here’s your updated **`README.md`** with the **live portfolio link added** ✅
 
 This is my personal **developer portfolio** built using **Next.js, Tailwind CSS, and Framer Motion**.
 
-🔗 **Live Portfolio** → [View Here](https://portfolio-delta-rust-22aph7bxi0.vercel.app/)
+🔗 **Live Portfolio:** [https://portfolio-delta-rust-22aph7bxi0.vercel.app](https://portfolio-delta-rust-22aph7bxi0.vercel.app)
 
 ---
 
@@ -51,10 +52,9 @@ App will be available at: **[http://localhost:3000](http://localhost:3000)**
 
 Easiest method: **Vercel**
 
-1. Push this repo to GitHub
-2. Go to [Vercel](https://vercel.com/)
-3. Import your repo → it auto-detects Next.js
-4. Click **Deploy** 🎉
+1. Go to [Vercel](https://vercel.com/)
+2. Import your repo → it auto-detects Next.js
+3. Click **Deploy** 🎉
 
 ---
 
@@ -68,4 +68,6 @@ Feel free to use and modify it, but the author is **not liable** for any issues 
 
 ---
 
-👨‍💻 Built with ❤️ by **[Chiranjeevi Joshi](https://github.com/jchiru21)**
+👨‍💻 Built with ❤️ by **[Chiranjeevi Joshi]**
+
+
