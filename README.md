@@ -1,24 +1,31 @@
+Here’s your updated **`README.md`** with the **live portfolio link added** ✅
+
+````markdown
 # 🚀 Chiranjeevi Joshi — Portfolio
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge\&logo=next.js\&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge\&logo=tailwind-css\&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge\&logo=framer\&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge\&logo=vercel\&logoColor=white)
+![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 ---
 
 This is my personal **developer portfolio** built using **Next.js, Tailwind CSS, and Framer Motion**.
 
+🔗 **Live Portfolio** → [View Here](https://portfolio-delta-rust-22aph7bxi0.vercel.app/)
+
+---
+
 ## 🔥 Features
 
-* ⚡ Modern **Next.js** app with optimized performance
-* 🎨 Styled with **Tailwind CSS** + glassmorphism theme
-* 🎬 Smooth animations using **Framer Motion**
-* 📜 Sections: Home, About Me, Skills, Projects, Experience, Education, Contact
-* 📄 Integrated **Resume Viewer**
-* 📱 Fully responsive (works on all devices)
-* 🌐 GitHub-style dark theme
+* ⚡ Modern **Next.js** app with optimized performance  
+* 🎨 Styled with **Tailwind CSS** + glassmorphism theme  
+* 🎬 Smooth animations using **Framer Motion**  
+* 📜 Sections: Home, About Me, Skills, Projects, Experience, Education, Contact  
+* 📄 Integrated **Resume Viewer**  
+* 📱 Fully responsive (works on all devices)  
+* 🌐 GitHub-style dark theme  
 
 ---
 
@@ -34,7 +41,7 @@ npm install
 
 # Run development server
 npm run dev
-```
+````
 
 App will be available at: **[http://localhost:3000](http://localhost:3000)**
 
@@ -62,4 +69,3 @@ Feel free to use and modify it, but the author is **not liable** for any issues 
 ---
 
 👨‍💻 Built with ❤️ by **[Chiranjeevi Joshi](https://github.com/jchiru21)**
-
