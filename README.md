@@ -20,7 +20,6 @@
 * 📱 Fully responsive (works on all devices)  
 * 🌐 GitHub-style dark theme  
 
----
 
 ## 🛠️ Installation & Setup
 
@@ -35,7 +34,20 @@ npm install
 # Run development server
 npm run dev
 ````
+---
+## 🛠️ Installation & Setup
 
+```bash
+# Clone this repo
+git clone https://github.com/jchiru21/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+````
 ---
 
 This is my personal **developer portfolio** built using **Next.js, Tailwind CSS, and Framer Motion**.
