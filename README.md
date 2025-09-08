@@ -60,9 +60,6 @@ Easiest method: **Vercel**
 
 This project is licensed under the **MIT License**.
 
-⚠️ **Disclaimer**:
-This code is provided *as-is* without warranty of any kind.
-Feel free to use and modify it, but the author is **not liable** for any issues arising from its usage.
 
 ---
 
