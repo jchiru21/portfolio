@@ -42,7 +42,6 @@ It showcases my projects, skills, and experience with smooth animations and a mo
 
 🔗 **Live Portfolio:** [View Here](https://portfolio-9llruvwr5-jchiru21s-projects.vercel.app/)
 
----
 
 
 
