@@ -1,40 +1,42 @@
 // components/Projects.js
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Projects() {
   const projects = [
     {
-      title: "Image Segmentation for Scene Understanding",
-      description: "DeepLabV3+ on the IDD dataset for autonomous driving.",
-      image: "/images/project1.png",
-      github: "https://github.com/jchiru21"
-    },
-    {
-      title: "Text Summarization & Translation",
-      description: "BERT + Flask app for multilingual summarization.",
+      title: "Intelligent Text Processing Platform",
+      description:
+        "PyTorch and Hugging Face platform for multilingual summarization with a reranker pipeline, Flask API, and interactive web UI.",
       image: "/images/project2.png",
       github: "https://github.com/jchiru21"
     },
     {
-      title: "Real-Time Object Detection",
-      description: "OpenCV + Flask + WebSocket for live camera feeds.",
-      image: "/images/project3.png",
+      title: "Road Scene Understanding With Segmentation",
+      description:
+        "SegFormer-based semantic segmentation model trained on the IDD dataset with custom preprocessing, mixed precision training, and automated evaluation.",
+      image: "/images/project1.png",
       github: "https://github.com/jchiru21"
     },
     {
-      title: "Netflix Clone",
+      title: "Ecom Chat — API",
       description:
-        "Netflix UI rebuilt using React, TS, Material UI with animations, slick carousel, video.js, and state management.",
-      image: "/images/netflix-clone.png",
+        "Dockerized Node.js and TypeScript API with PostgreSQL, Redis, and Prisma, featuring one-command setup and live debugging support.",
+      image: "/images/project3.png",
+      github: "https://github.com/jchiru21/ecom-chat-monorepo"
+    },
+    {
+      title: "Text Summarization & Translation",
+      description: "BERT + Flask app for multilingual summarization.",
+      image: "/images/project4.png",
       github: "https://github.com/jchiru21"
     }
-  ];
+  ]
 
   return (
     <div id="projects" className="bg-gray-950 py-20 px-6">
-      <h2 className="text-4xl font-bold mb-12 text-center text-white">
-        📂 Projects
-      </h2>
+      <h2 className="text-4xl font-bold mb-12 text-center text-white">📂 Projects</h2>
+
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 lg:grid-cols-4 gap-10">
         {projects.map((proj, idx) => (
           <motion.div
@@ -45,11 +47,18 @@ export default function Projects() {
             transition={{ delay: idx * 0.2, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <img
-              src={proj.image}
-              alt={proj.title}
-              className="w-full h-48 object-cover rounded-t-lg"
-            />
+            {/* next/image optimizes and prevents lint warning */}
+            <div className="w-full h-48 relative">
+              <Image
+                src={proj.image}
+                alt={proj.title}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="rounded-t-lg"
+              />
+            </div>
+
             <div className="p-6">
               <h3 className="font-bold text-xl text-white">{proj.title}</h3>
               <p className="text-gray-400 text-sm mt-2">{proj.description}</p>
@@ -69,5 +78,5 @@ export default function Projects() {
         ))}
       </div>
     </div>
-  );
+  )
 }
