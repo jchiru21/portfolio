@@ -24,8 +24,19 @@ export default function Hero() {
       "for skill in ['Python', 'AI/ML', 'Full-Stack']:",
       "    print(f'Leveling up {skill} ✅')",
       "print('Ready for Challenges! 🔥')"
+    ],
+    [
+      "function innovate(tech) {",
+      "  return `${tech} at scale 🚀`; }",
+      "console.log(innovate('AI/ML'));"
+    ],
+    [
+      "int main() {",
+      "  cout << \"Engineering the Future 🚀\" << endl;",
+      "  return 0;}",
     ]
   ]
+  
 
   const [mounted, setMounted] = useState(false)
   const [text, setText] = useState(codeSets[0].map(() => ""))
@@ -80,7 +91,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
       >
-        Chiranjeevi Joshi
+        Hello, I'm Chiranjeevi
       </motion.h1>
 
       {/* Subtitle */}
@@ -90,7 +101,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.9 }}
       >
-        Aspiring Software Engineer · AI/ML Innovator 
+        Software Developer
       </motion.p>
 
       {/* Multi-line Typing Console */}
@@ -118,12 +129,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.9 }}
       >
-        <a
-        href="#contact"
-        className="px-6 py-3 bg-gray-800 text-gray-200 rounded-lg font-semibold shadow-lg hover:shadow-gray-500/50 hover:scale-105 transition-all duration-300"
-        >
-          Get in Touch
-        </a>
+        
       </motion.div>
 
       <style jsx>{`

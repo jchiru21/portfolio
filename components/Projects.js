@@ -4,28 +4,27 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const projects = [
     {
-      title: "Image Segmentation for Scene Understanding",
-      description: "DeepLabV3+ on the IDD dataset for autonomous driving.",
-      image: "/images/project1.png",
-      github: "https://github.com/jchiru21"
-    },
-    {
-      title: "Text Summarization & Translation",
-      description: "BERT + Flask app for multilingual summarization.",
+      title: "Intelligent Text Processing Platform",
+      description: "PyTorch and Hugging Face platform for multilingual summarization with a reranker pipeline, Flask API, and interactive web UI.",
       image: "/images/project2.png",
       github: "https://github.com/jchiru21"
     },
     {
-      title: "Real-Time Object Detection",
-      description: "OpenCV + Flask + WebSocket for live camera feeds.",
-      image: "/images/project3.png",
+      title: "Road Scene Understanding With Segmentation",
+      description: "SegFormer-based semantic segmentation model trained on the IDD dataset with custom preprocessing, mixed precision training, and automated evaluation.",
+      image: "/images/project1.png",
       github: "https://github.com/jchiru21"
     },
     {
-      title: "Netflix Clone",
-      description:
-        "Netflix UI rebuilt using React, TS, Material UI with animations, slick carousel, video.js, and state management.",
-      image: "/images/netflix-clone.png",
+      title: "Ecom Chat — API",
+      description: "Dockerized Node.js and TypeScript API with PostgreSQL, Redis, and Prisma, featuring one-command setup and live debugging support.",
+      image: "/images/project3.png",
+      github: "https://github.com/jchiru21/ecom-chat-monorepo"
+    },    
+    {
+      title: "Text Summarization & Translation",
+      description: "BERT + Flask app for multilingual summarization.",
+      image: "/images/project4.png",
       github: "https://github.com/jchiru21"
     }
   ];
