@@ -39,7 +39,7 @@ npm run dev
 
 This is my personal **developer portfolio** built using **Next.js, Tailwind CSS, and Framer Motion**.
 
-🔗 **Live Portfolio:** [https://portfolio-delta-rust-22aph7bxi0.vercel.app](https://portfolio-delta-rust-22aph7bxi0.vercel.app)
+🔗 **Live Portfolio:** [CLICK HERE]((https://portfolio-9llruvwr5-jchiru21s-projects.vercel.app/))
 
 ---
 
