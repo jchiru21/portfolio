@@ -44,13 +44,5 @@ It showcases my projects, skills, and experience with smooth animations and a mo
 
 ---
 
-App will be available at: **[http://localhost:3000](http://localhost:3000)**
-
----
-
-## 🚀 Deployment
-
-Go to [Vercel](https://vercel.com/)
-
 
 
