@@ -50,21 +50,7 @@ App will be available at: **[http://localhost:3000](http://localhost:3000)**
 
 ## 🚀 Deployment
 
-Easiest method: **Vercel**
+Go to [Vercel](https://vercel.com/)
 
-1. Go to [Vercel](https://vercel.com/)
-2. Import your repo → it auto-detects Next.js
-3. Click **Deploy** 🎉
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-
----
-
-👨‍💻 Built with ❤️ by **[Chiranjeevi Joshi]**
 
 
