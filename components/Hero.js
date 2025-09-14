@@ -2,42 +2,41 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
-export default function Hero() {
-  // 3-line code sets (fun + AI/ML + software vibes)
-  const codeSets = [
-    [
-      "def build_future(ai, code):",
-      "    return ai + code + ' 🚀'",
-      "print(build_future('ML', 'Engineering'))"
-    ],
-    [
-      "class Developer:",
-      "    def __init__(self, name):",
-      "        self.name = 'Chiranjeevi Joshi'"
-    ],
-    [
-      "import torch",
-      "model = torch.nn.Transformer()",
-      "print('Optimizing AI Inference ⚡')"
-    ],
-    [
-      "for skill in ['Python', 'AI/ML', 'Full-Stack']:",
-      "    print(f'Leveling up {skill} ✅')",
-      "print('Ready for Challenges! 🔥')"
-    ],
-    [
-      "function innovate(tech) {",
-      "  return `${tech} at scale 🚀`; }",
-      "console.log(innovate('AI/ML'));"
-    ],
-    [
-      "int main() {",
-      "  cout << \"Engineering the Future 🚀\" << endl;",
-      "  return 0;}",
-    ]
+// ✅ Move codeSets outside component so it's stable
+const codeSets = [
+  [
+    "def build_future(ai, code):",
+    "    return ai + code + ' 🚀'",
+    "print(build_future('ML', 'Engineering'))"
+  ],
+  [
+    "class Developer:",
+    "    def __init__(self, name):",
+    "        self.name = 'Chiranjeevi Joshi'"
+  ],
+  [
+    "import torch",
+    "model = torch.nn.Transformer()",
+    "print('Optimizing AI Inference ⚡')"
+  ],
+  [
+    "for skill in ['Python', 'AI/ML', 'Full-Stack']:",
+    "    print(f'Leveling up {skill} ✅')",
+    "print('Ready for Challenges! 🔥')"
+  ],
+  [
+    "function innovate(tech) {",
+    "  return `${tech} at scale 🚀`; }",
+    "console.log(innovate('AI/ML'));"
+  ],
+  [
+    "int main() {",
+    "  cout << \"Engineering the Future 🚀\" << endl;",
+    "  return 0;}",
   ]
-  
+]
 
+export default function Hero() {
   const [mounted, setMounted] = useState(false)
   const [text, setText] = useState(codeSets[0].map(() => ""))
   const [setIndex, setSetIndex] = useState(0)
@@ -76,7 +75,7 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timer)
-  }, [mounted, charIndex, deleting, setIndex])
+  }, [mounted, charIndex, deleting, setIndex, codeSets])
 
   return (
     <div
@@ -91,7 +90,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
       >
-        Hello, I'm Chiranjeevi
+        Hello, I&apos;m Chiranjeevi
       </motion.h1>
 
       {/* Subtitle */}
@@ -122,14 +121,13 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Buttons */}
       <motion.div
         className="mt-10 flex gap-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.9 }}
       >
-        
+        {/* buttons could go here */}
       </motion.div>
 
       <style jsx>{`
