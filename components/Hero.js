@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
-// ✅ Move codeSets outside component so it's stable
+// stable codeSets outside component
 const codeSets = [
   [
     "def build_future(ai, code):",
@@ -53,39 +53,35 @@ export default function Hero() {
 
     let timer
     if (!deleting && charIndex <= currentSet[0].length) {
-      // type forward
       timer = setTimeout(() => {
         setText(currentSet.map(line => line.slice(0, charIndex)))
         setCharIndex(ci => ci + 1)
       }, typeSpeed)
     } else if (!deleting && charIndex > currentSet[0].length) {
-      // hold before delete
       timer = setTimeout(() => setDeleting(true), holdDelay)
     } else if (deleting && charIndex >= 0) {
-      // delete backward
       timer = setTimeout(() => {
         setText(currentSet.map(line => line.slice(0, charIndex)))
         setCharIndex(ci => ci - 1)
       }, typeSpeed)
     } else if (deleting && charIndex < 0) {
-      // move to next set
       setDeleting(false)
       setCharIndex(0)
       setSetIndex(si => si + 1)
     }
 
     return () => clearTimeout(timer)
-  }, [mounted, charIndex, deleting, setIndex, codeSets])
+    // codeSets is defined outside the component and is stable,
+    // eslint should be satisfied by the deps below.
+  }, [mounted, charIndex, deleting, setIndex])
 
   return (
     <div
       id="home"
       className="h-screen flex flex-col items-center justify-center text-center px-6"
     >
-      {/* Heading */}
       <motion.h1
-        className="text-6xl font-extrabold bg-clip-text text-transparent 
-                   bg-gradient-to-r from-blue-500 to-purple-600"
+        className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
@@ -93,21 +89,12 @@ export default function Hero() {
         Hello, I&apos;m Chiranjeevi
       </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        className="mt-4 text-xl text-gray-300 max-w-2xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.9 }}
-      >
+      <motion.p className="mt-4 text-xl text-gray-300 max-w-2xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.9 }}>
         Software Developer
       </motion.p>
 
-      {/* Multi-line Typing Console */}
       <motion.div
-        className="mt-8 w-full max-w-3xl bg-black/40 glass-card 
-                   border border-white/10 px-6 py-6 rounded-lg 
-                   font-mono text-left text-sm text-blue-200"
+        className="mt-8 w-full max-w-3xl bg-black/40 glass-card border border-white/10 px-6 py-6 rounded-lg font-mono text-left text-sm text-blue-200"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.9 }}
@@ -121,25 +108,9 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <motion.div
-        className="mt-10 flex gap-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.9 }}
-      >
-        {/* buttons could go here */}
-      </motion.div>
-
       <style jsx>{`
-        .blink {
-          display: inline-block;
-          width: 10px;
-          animation: blink 1s steps(2, start) infinite;
-          color: #60a5fa;
-        }
-        @keyframes blink {
-          to { visibility: hidden; }
-        }
+        .blink { display:inline-block; width:10px; animation: blink 1s steps(2,start) infinite; color:#60a5fa; }
+        @keyframes blink { to { visibility: hidden; } }
       `}</style>
     </div>
   )
