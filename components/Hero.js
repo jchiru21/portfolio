@@ -1,8 +1,8 @@
 // components/Hero.js
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
-// stable codeSets outside component
+// stable code sets
 const codeSets = [
   [
     "def build_future(ai, code):",
@@ -32,56 +32,76 @@ const codeSets = [
   [
     "int main() {",
     "  cout << \"Engineering the Future 🚀\" << endl;",
-    "  return 0;}",
+    "  return 0;",
+    "}"
   ]
 ]
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
-  const [text, setText] = useState(codeSets[0].map(() => ""))
+  // each entry is a full line string
+  const [textLines, setTextLines] = useState(codeSets[0].map(() => ""))
   const [setIndex, setSetIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
+  const ttyRef = useRef(null)
 
   useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     if (!mounted) return
-    const currentSet = codeSets[setIndex % codeSets.length]
-    const typeSpeed = deleting ? 30 : 60
-    const holdDelay = 1500
 
-    let timer
-    if (!deleting && charIndex <= currentSet[0].length) {
+    const currentSet = codeSets[setIndex % codeSets.length]
+    // compute the max length among lines so typing cycles until the longest line completes
+    const maxLen = Math.max(...currentSet.map((l) => l.length))
+    const typeSpeed = deleting ? 30 : 55
+    const holdDelay = 1200
+
+    let timer = null
+
+    if (!deleting && charIndex <= maxLen) {
+      // type forward: for each line, reveal up to charIndex characters (safe slice)
       timer = setTimeout(() => {
-        setText(currentSet.map(line => line.slice(0, charIndex)))
-        setCharIndex(ci => ci + 1)
+        setTextLines(currentSet.map((line) => line.slice(0, Math.min(charIndex, line.length))))
+        setCharIndex((ci) => ci + 1)
       }, typeSpeed)
-    } else if (!deleting && charIndex > currentSet[0].length) {
+    } else if (!deleting && charIndex > maxLen) {
+      // hold before deleting
       timer = setTimeout(() => setDeleting(true), holdDelay)
     } else if (deleting && charIndex >= 0) {
+      // delete backward
       timer = setTimeout(() => {
-        setText(currentSet.map(line => line.slice(0, charIndex)))
-        setCharIndex(ci => ci - 1)
+        setTextLines(currentSet.map((line) => line.slice(0, Math.min(charIndex, line.length))))
+        setCharIndex((ci) => ci - 1)
       }, typeSpeed)
     } else if (deleting && charIndex < 0) {
+      // move to next set
       setDeleting(false)
       setCharIndex(0)
-      setSetIndex(si => si + 1)
+      setSetIndex((si) => si + 1)
     }
 
     return () => clearTimeout(timer)
-    // codeSets is defined outside the component and is stable,
-    // eslint should be satisfied by the deps below.
+    // codeSets is stable and external, we intentionally exclude it from deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, charIndex, deleting, setIndex])
+
+  // scroll console to bottom when typing (small UX nicety)
+  useEffect(() => {
+    if (ttyRef.current) {
+      // slight delay so element sizing settles
+      ttyRef.current.scrollLeft = 0
+    }
+  }, [textLines])
 
   return (
     <div
       id="home"
-      className="h-screen flex flex-col items-center justify-center text-center px-6"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-6"
     >
+      {/* Heading */}
       <motion.h1
-        className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"
+        className="text-[3.2rem] sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 leading-tight"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
@@ -89,28 +109,43 @@ export default function Hero() {
         Hello, I&apos;m Chiranjeevi
       </motion.h1>
 
-      <motion.p className="mt-4 text-xl text-gray-300 max-w-2xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.9 }}>
+      <motion.p
+        className="mt-4 text-lg sm:text-xl text-gray-300 max-w-2xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.45, duration: 0.7 }}
+      >
         Software Developer
       </motion.p>
 
+      {/* Typing Console */}
       <motion.div
-        className="mt-8 w-full max-w-3xl bg-black/40 glass-card border border-white/10 px-6 py-6 rounded-lg font-mono text-left text-sm text-blue-200"
+        ref={ttyRef}
+        className="mt-8 w-full max-w-3xl bg-black/40 glass-card border border-white/10 px-4 py-5 rounded-lg font-mono text-left text-sm text-blue-200 overflow-auto"
+        style={{ WebkitOverflowScrolling: "touch" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.9 }}
       >
-        <div className="space-y-2">
-          {text.map((line, i) => (
+        {/* Use pre so indentation and spacing are preserved.
+            We also set CSS to allow wrapping on very small screens but prefer horizontal scroll. */}
+        <pre className="whitespace-pre-wrap sm:whitespace-pre overflow-x-auto">
+          {textLines.map((line, i) => (
             <div key={i}>
-              <code>{line}<span className="blink">|</span></code>
+              <code>{line}<span className="inline-block ml-0 text-blue-300">{" "}{i === textLines.length - 1 && (deleting ? "" : "|")}</span></code>
             </div>
           ))}
-        </div>
+        </pre>
       </motion.div>
 
       <style jsx>{`
-        .blink { display:inline-block; width:10px; animation: blink 1s steps(2,start) infinite; color:#60a5fa; }
-        @keyframes blink { to { visibility: hidden; } }
+        pre { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; font-size: 0.95rem; }
+        /* show a subtle right padding so mobile scrollable area is obvious */
+        .glass-card pre { padding-right: 12px; }
+        /* blinking cursor handled by CSS animation if desired */
+        @media (max-width: 640px) {
+          pre { font-size: 0.9rem; }
+        }
       `}</style>
     </div>
   )
