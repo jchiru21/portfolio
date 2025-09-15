@@ -40,7 +40,7 @@ npm run dev
 This is my personal **developer portfolio**, built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.  
 It showcases my projects, skills, and experience with smooth animations and a modern UI.
 
-🔗 **Live Portfolio:** [View Here]([https://portfolio-9llruvwr5-jchiru21s-projects.vercel.app/](https://portfolio-git-main-jchiru21s-projects.vercel.app?_vercel_share=sD0dmYYzolY9SRx7gMeXZnoxgdmRdowu])
+🔗 **Live Portfolio:** [View Here](https://portfolio-9llruvwr5-jchiru21s-projects.vercel.app/](https://portfolio-git-main-jchiru21s-projects.vercel.app?_vercel_share=sD0dmYYzolY9SRx7gMeXZnoxgdmRdowu)
 
 
 
