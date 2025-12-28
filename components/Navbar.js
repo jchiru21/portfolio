@@ -9,6 +9,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -64,9 +69,9 @@ export default function Navbar() {
           aria-label="Toggle theme"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-200 hover:text-yellow-300 hover:bg-gray-700 transition"
-          title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          title={mounted ? (theme === "dark" ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
         >
-          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          {mounted ? (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />) : <Sun size={18} />}
         </button>
 
         {/* Mobile Menu Button */}
@@ -109,9 +114,9 @@ export default function Navbar() {
                 aria-label="Toggle theme"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="mt-2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-200 hover:text-yellow-300 hover:bg-gray-700 transition"
-                title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                title={mounted ? (theme === "dark" ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"}
               >
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                {mounted ? (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />) : <Sun size={18} />}
               </button>
             </div>
           </motion.div>
