@@ -4,7 +4,10 @@
 
 /* Solid GitHub-dark background */
 body {
-  @apply text-gray-200 font-sans;
+  color: rgb(229 231 235);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
+    Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   min-height: 100vh;
 
   /* Pure GitHub dark color */
@@ -44,6 +47,7 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(59,130,246,0.6) #0d1117;
+}
 
 /* ============================================
    Light Mode Theme Support
@@ -128,5 +132,4 @@ body {
 
 .light .bg-black\/20 {
   background-color: rgba(0, 0, 0, 0.03) !important;
-}
 }
