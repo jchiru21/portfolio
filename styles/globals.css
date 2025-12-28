@@ -133,3 +133,22 @@ body {
 .light .bg-black\/20 {
   background-color: rgba(0, 0, 0, 0.03) !important;
 }
+
+/* Common utility overrides for light mode visibility */
+.light .text-white,
+.light .text-gray-100 {
+  color: var(--text-primary) !important;
+}
+
+.light .bg-gray-800,
+.light .bg-gray-900 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light .bg-gray-950 {
+  background-color: var(--bg-primary) !important;
+}
+
+.light .glass-card * {
+  color: var(--text-primary);
+}
