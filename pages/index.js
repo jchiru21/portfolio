@@ -26,7 +26,7 @@ export default function Home() {
         />
       </Head>
 
-      <main className="bg-[#0d1117] text-gray-100 min-h-screen">
+      <main className="bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen">
         <Navbar />
         <SocialSidebar /> 
 
