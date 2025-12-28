@@ -1,12 +1,14 @@
 // components/Navbar.js
 import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 import { Link } from "react-scroll"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -57,6 +59,16 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* Theme Toggle */}
+        <button
+          aria-label="Toggle theme"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-200 hover:text-yellow-300 hover:bg-gray-700 transition"
+          title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
+
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-200 hover:text-blue-400 transition"
@@ -91,6 +103,16 @@ export default function Navbar() {
                   {item}
                 </Link>
               ))}
+
+              {/* Mobile Theme Toggle */}
+              <button
+                aria-label="Toggle theme"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="mt-2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-200 hover:text-yellow-300 hover:bg-gray-700 transition"
+                title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
             </div>
           </motion.div>
         )}
