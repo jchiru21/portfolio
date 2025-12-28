@@ -34,14 +34,14 @@ export default function Projects() {
   ]
 
   return (
-    <div id="projects" className="bg-gray-950 py-20 px-6">
-      <h2 className="text-4xl font-bold mb-12 text-center text-white">📂 Projects</h2>
+    <div id="projects" className="py-2">
+      <h2 className="text-4xl font-bold mb-8 text-center text-[var(--text-primary)]">📂 Projects</h2>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 lg:grid-cols-4 gap-10">
         {projects.map((proj, idx) => (
           <motion.div
             key={proj.title}
-            className="rounded-xl overflow-hidden bg-gray-800 shadow-lg hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+            className="glass-card overflow-hidden hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.2, duration: 0.8 }}
@@ -60,8 +60,8 @@ export default function Projects() {
             </div>
 
             <div className="p-6">
-              <h3 className="font-bold text-xl text-white">{proj.title}</h3>
-              <p className="text-gray-400 text-sm mt-2">{proj.description}</p>
+              <h3 className="font-bold text-xl text-[var(--text-primary)]">{proj.title}</h3>
+              <p className="text-[var(--text-secondary)] text-sm mt-2">{proj.description}</p>
 
               <div className="mt-4">
                 <a

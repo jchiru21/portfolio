@@ -41,19 +41,19 @@ export default function Contact() {
         >
           <h3 className="text-xl font-bold mb-4">Social</h3>
           <div className="grid grid-cols-2 gap-4">
-            <a href="https://github.com/jchiru21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+            <a href="https://github.com/jchiru21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 border border-[var(--border-color)] transition">
               <Github size={18} className="text-white" />
               <span className="text-gray-200 text-sm">GitHub</span>
             </a>
-            <a href="https://www.linkedin.com/in/jchiru21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+            <a href="https://www.linkedin.com/in/jchiru21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 border border-[var(--border-color)] transition">
               <Linkedin size={18} className="text-blue-400" />
               <span className="text-gray-200 text-sm">LinkedIn</span>
             </a>
-            <a href="https://leetcode.com/jchiru21/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+            <a href="https://leetcode.com/jchiru21/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 border border-[var(--border-color)] transition">
               <SiLeetcode size={18} className="text-yellow-400" />
               <span className="text-gray-200 text-sm">LeetCode</span>
             </a>
-            <a href="https://twitter.com/jchiru21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+            <a href="https://twitter.com/jchiru21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-lg bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 border border-[var(--border-color)] transition">
               <span className="inline-block w-4 h-4 rounded-full bg-sky-400" />
               <span className="text-gray-200 text-sm">Twitter/X</span>
             </a>
