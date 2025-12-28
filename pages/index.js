@@ -6,6 +6,8 @@ import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Skills from "../components/Skills"
 import Projects from "../components/Projects"
+import Publications from "../components/Publications"
+import Coursework from "../components/Coursework"
 import Experience from "../components/Experience"
 import Education from "../components/Education"
 import Contact from "../components/Contact"
@@ -62,7 +64,7 @@ export default function Home() {
 
               <div className="mt-4 flex gap-3">
                 <a
-                  href="/Chiranjeevi_Joshi_Resume.pdf"
+                  href="/SWE_Chiranjeevi_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
@@ -91,6 +93,12 @@ export default function Home() {
         <section id="projects" className="py-20 px-6">
           <div className="max-w-6xl mx-auto glass-card p-6">
             <Projects />
+
+            {/* Publications */}
+            <Publications />
+
+            {/* Coursework */}
+            <Coursework />
           </div>
         </section>
 

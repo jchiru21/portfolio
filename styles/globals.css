@@ -32,37 +32,101 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.9); /* visible color when shown */
+  background: rgba(59, 130, 246, 0.6);
   border-radius: 8px;
-  transition: transform 0.28s cubic-bezier(.2,.9,.3,1), opacity 0.28s ease, box-shadow 0.2s ease;
-  opacity: 0;
-  transform: translateX(6px); /* push thumb off-screen when hidden */
-  pointer-events: none;
-  box-shadow: none;
 }
 
-/* visible state: slide in, opaque, clickable */
-html.scrolling ::-webkit-scrollbar-thumb,
-body.scrolling ::-webkit-scrollbar-thumb {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-  pointer-events: auto !important;
-  box-shadow: 0 0 10px rgba(59,130,246,0.16);
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
 }
 
-/* hover state */
-html.scrolling ::-webkit-scrollbar-thumb:hover,
-body.scrolling ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.98);
-  box-shadow: 0 0 12px rgba(59,130,246,0.22);
-}
-
-/* Firefox: toggle between transparent and visible color via .scrolling on html/body */
+/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(59,130,246,0) #0d1117; /* hidden by default (transparent thumb) */
+  scrollbar-color: rgba(59,130,246,0.6) #0d1117;
+
+/* ============================================
+   Light Mode Theme Support
+   ============================================ */
+
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --text-primary: #24292f;
+  --text-secondary: #57606a;
+  --border-color: #d0d7de;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
-html.scrolling,
-body.scrolling {
-  scrollbar-color: rgba(59,130,246,0.85) #0d1117; /* visible when scrolling */
+
+.dark {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --border-color: #30363d;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode overrides */
+.light body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light .glass-card {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+.light * {
+  scrollbar-color: rgba(59,130,246,0.5) #f6f8fa;
+}
+
+/* Text colors in light mode */
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  color: var(--text-primary);
+}
+
+.light p, .light span, .light div {
+  color: var(--text-primary);
+}
+
+.light .text-gray-200 {
+  color: var(--text-primary) !important;
+}
+
+.light .text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+.light .text-gray-400 {
+  color: #6e7781 !important;
+}
+
+.light .text-gray-500 {
+  color: #8b949e !important;
+}
+
+.light .bg-\[#0d1117\] {
+  background-color: var(--bg-primary) !important;
+}
+
+.light .bg-black\/20 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
 }
