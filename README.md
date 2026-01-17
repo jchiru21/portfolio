@@ -1,4 +1,4 @@
-# 🚀 Developer Portfolio
+# Developer Portfolio
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge\&logo=next.js\&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge\&logo=tailwind-css\&logoColor=white)
@@ -8,20 +8,20 @@
 
 ---
 
-## 🔥 Overview
+## Overview
 
 This is a **modern developer portfolio** built using **Next.js**, **Tailwind CSS**, and **Framer Motion**.
 It’s designed to be **easy to edit**, fully responsive, and deployed instantly on **Vercel**.
 
 ---
 
-## 🎨 Features
+##  Features
 
-* ⚡ **Next.js** for fast, SEO-friendly web apps
-* 🎨 **Tailwind CSS** with a sleek glassmorphism theme
-* 🎬 **Framer Motion** animations for smooth transitions
-* 📱 **Fully responsive** across devices (mobile-first design)
-* 📜 Sections included:
+*  **Next.js** for fast, SEO-friendly web apps
+*  **Tailwind CSS** with a sleek glassmorphism theme
+*  **Framer Motion** animations for smooth transitions
+*  **Fully responsive** across devices (mobile-first design)
+*  Sections included:
 
   * Home
   * About Me
@@ -30,13 +30,13 @@ It’s designed to be **easy to edit**, fully responsive, and deployed instantly
   * Experience
   * Education
   * Contact
-* 📄 Integrated **Resume Viewer** (PDF support)
-* 🌐 **Dark theme** inspired by GitHub UI
-* 🚀 **One-click deploy** on Vercel
+*  Integrated **Resume Viewer** (PDF support)
+*  **Dark theme** inspired by GitHub UI
+*  **One-click deploy** on Vercel
 
 ---
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 Clone the repository and install dependencies:
 
@@ -56,7 +56,7 @@ Now open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
 
 ---
 
-## ⚙️ Customization
+## Customization
 
 1. **Edit Personal Info**
 
@@ -79,7 +79,7 @@ Now open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 Deploy to **Vercel** in one click:
 
@@ -96,7 +96,7 @@ https://your-username.vercel.app
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 portfolio/
@@ -110,17 +110,12 @@ portfolio/
 
 ---
 
-## 📜 License
+## License
 
 This project is open-source under the **MIT License**.
 You are free to use, modify, and distribute it. Attribution is appreciated but not required.
 
 ---
 
-## 🌐 Live Example
-
 🔗 **Demo Portfolio:** [View Here](https://portfolio-git-main-jchiru21s-projects.vercel.app?_vercel_share=sD0dmYYzolY9SRx7gMeXZnoxgdmRdowu)
 
----
-
-👉 Fork it, customize it, and launch your **personal portfolio website** in minutes!
