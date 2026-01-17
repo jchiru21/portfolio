@@ -30,10 +30,6 @@ It’s designed to be **easy to edit**, fully responsive, and deployed instantly
   * Experience
   * Education
   * Contact
-*  Integrated **Resume Viewer** (PDF support)
-*  **Dark theme** inspired by GitHub UI
-*  **One-click deploy** on Vercel
-
 ---
 
 ## Installation & Setup
@@ -52,47 +48,14 @@ npm install
 npm run dev
 ```
 
-Now open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
-
 ---
 
 ## Customization
 
-1. **Edit Personal Info**
+ **Edit Personal Info**
 
-   * Update your details in the `components` and `data` files (name, bio, links).
-   * Replace placeholders with your **GitHub, LinkedIn, Resume link**, etc.
-
-2. **Update Projects**
-
-   * Go to `data/projects.js` (or JSON file used).
-   * Add your project name, description, links, and tech stack.
-
-3. **Change Resume**
-
-   * Replace the sample resume file with your own (`public/resume.pdf`).
-
-4. **Branding**
-
-   * Update `favicon.ico` and `logo` in the `/public` folder.
-   * Customize theme colors in `tailwind.config.js`.
-
----
-
-## Deployment
-
-Deploy to **Vercel** in one click:
-
-1. Push your code to GitHub.
-2. Go to [Vercel](https://vercel.com/).
-3. Import the repository.
-4. Click **Deploy**.
-
-Your portfolio will be live at:
-
-```
-https://your-username.vercel.app
-```
+  * Update your details in the `components` and `data` files (name, bio, links).
+  * Replace placeholders with your **GitHub, LinkedIn, Resume link**, etc.
 
 ---
 
