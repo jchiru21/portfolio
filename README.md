@@ -21,6 +21,8 @@ It’s designed to be **easy to edit**, fully responsive, and deployed instantly
 *  **Tailwind CSS** with a sleek glassmorphism theme
 *  **Framer Motion** animations for smooth transitions
 *  **Fully responsive** across devices (mobile-first design)
+---
+
 *  Sections included:
 
   * Home
